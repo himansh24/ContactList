@@ -39,8 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentic',
     'rest_framework',
-    'Contacts'
+    'Contacts',
+    'drf_yasg'
 ]
+
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        "Auth Token eg [Bearer (JWT) ]": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
